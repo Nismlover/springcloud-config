@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: eiz-admin-account
+  cloud:
+    config:
+      name: eiz-admin-account
+      discovery:
+        service-id: eiz-admin-account
+        enabled: true
+  datasource:
+#    url: jdbc:mysql://172.31.7.205:3105/eiz-admin?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
+#    username: eiz_test01
+#    password: eiZ$TeST3105
+#    url: jdbc:mysql://127.0.0.1:3306/eiz-admin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: root
+    url: jdbc:mysql://13.239.139.109:3105/eiz-admin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    username: eiz_test01
+    password: eiZ$TeST3105
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: -1
+#  thymeleaf:
+#    prefix=classpath: /static/
+
+server:
+  port: 8081
+
+eiz:
+  security:
+    jwt:
+      signkey: BNP5PoFaq12UapkBymWQDbhniFr65lWG
+
+#security:
+#  oauth2:
+#    client:
+#      client-id: EIZ-Gateway
+#      client-secret: eiz-secret
+#      scope: all
+#      authorized-grant-types: client_credentials
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://47.56.250.140:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+logging:
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    com.eiz.admin.account: DEBUG
+    org.springframework: ERROR
+    org.hibernate: ERROR
+  file:
+    name: logs/eiz-admin-auth.log
