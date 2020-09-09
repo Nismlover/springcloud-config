@@ -1,0 +1,66 @@
+## gateway
+spring:
+  application:
+    name: eiz-admin-gateway
+    cloud:
+      config:
+        name: eiz-admin-gateway
+        discovery:
+          service-id: eiz-admin-gateway
+          enabled: true
+
+eiz:
+  security:
+    jwt:
+      signkey: BNP5PoFaq12UapkBymWQDbhniFr65lWG
+    clientId: EIZ-Gateway
+    clientSecret: eiz-secret
+    check_token:
+      url: http://localhost:8081/oauth/check_token
+
+server:
+  port: 8082
+  tomcat:
+    remote-ip-header: x-forwarded-for
+    protocol-header: x-forwarded-proto
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://47.56.250.140:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+zuul:
+  #  prefix: /api/auth
+  sensitiveHeaders: Authorization
+  routes:
+    eiz-admin-account:
+      path: /eiz-admin-account/**
+      serviceId: eiz-admin-account
+    eiz-admin-support:
+      path: /eiz-admin-support/**
+      serviceId: eiz-admin-support
+  ignored-services: true
+  ignored-headers: Access-Control-Allow-Origin
+  add-host-header: true
+  #添加代理头
+#  add-proxy-headers: true
+  host:
+    connect-timeout-millis: 30000
+    socket-timeout-millis: 60000
+
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+
+logging:
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    com.eiz.ecosys.gateway: DEBUG
+    org.springframework: DEBUG
+    org.hibernate: ERROR
+  file:
+    name: logs/eiz-admin-gateway.log
