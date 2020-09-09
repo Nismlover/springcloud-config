@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: eiz-admin-support
+  cloud:
+    config:
+      name: eiz-admin-support
+      discovery:
+        service-id: eiz-admin-support
+        enabled: true
+  datasource:
+#    jdbc-url: dburl
+#    username: username
+#    password: password
+#    jdbc-url: jdbc:mysql://127.0.0.1:3306/eiz-admin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+#    jdbc-url: jdbc:mysql://rm-3nscu4tv6akzn4612vo.mysql.rds.aliyuncs.com:3306/eiz_test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+#    username: user01
+#    password: eizXA2020
+    jdbc-url: jdbc:mysql://13.239.139.109:3105/eiz_test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    username: eiz_test01
+    password: eiZ$TeST3105
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: mysql
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        generate_statistics: true
+        jdbc:
+          batch_size: 50
+        order_inserts: true
+        order_updates: true
+      use-new-id-generator-mappings: false
+
+server:
+  port: 8101
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://47.56.250.140:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+logging:
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    com.eiz.ecosys.gateway: DEBUG
+    org.springframework: DEBUG
+    org.hibernate: ERROR
+  file:
+    name: logs/eiz-admin-support.log
