@@ -41,15 +41,14 @@ eiz:
 #      scope: all
 #      authorized-grant-types: client_credentials
 
-
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-#       defaultZone: http://47.56.250.140:8761/eureka/
+#       defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://47.56.250.140:8761/eureka/
   instance:
     prefer-ip-address: true
-
+    
 logging:
   pattern:
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
