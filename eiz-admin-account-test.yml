@@ -41,6 +41,7 @@ eiz:
 #      scope: all
 #      authorized-grant-types: client_credentials
 
+
 eureka:
   client:
     serviceUrl:
