@@ -15,7 +15,7 @@ spring:
 #    jdbc-url: jdbc:mysql://rm-3nscu4tv6akzn4612vo.mysql.rds.aliyuncs.com:3306/eiz_test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
 #    username: user01
 #    password: eizXA2020
-    jdbc-url: jdbc:mysql://13.239.139.109:3108/eiz_test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    jdbc-url: jdbc:mysql://13.239.139.109:3109/eiz_test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
     username: eiz_test01
     password: eiZ$TeST3105
     driver-class-name: com.mysql.cj.jdbc.Driver
