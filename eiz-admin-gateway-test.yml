@@ -32,6 +32,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
+
 zuul:
   #  prefix: /api/auth
   sensitiveHeaders: Authorization
