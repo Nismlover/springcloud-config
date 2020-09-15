@@ -17,7 +17,7 @@ spring:
 #    password: eizXA2020
     jdbc-url: jdbc:mysql://13.239.139.109:3105/eiz_test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
     username: eiz_test01
-    password: eiZ$TeST3106
+    password: eiZ$TeST3105
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database: mysql
@@ -38,8 +38,8 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-#       defaultZone: http://47.56.250.140:8761/eureka/
+#       defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://47.56.250.140:8761/eureka/
   instance:
     prefer-ip-address: true
     
