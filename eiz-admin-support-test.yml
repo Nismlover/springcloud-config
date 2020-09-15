@@ -17,7 +17,7 @@ spring:
 #    password: eizXA2020
     jdbc-url: jdbc:mysql://13.239.139.109:3105/eiz_test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
     username: eiz_test01
-    password: eiZ$TeST3105
+    password: eiZ$TeST3106
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database: mysql
