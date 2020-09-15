@@ -43,6 +43,7 @@ eureka:
       defaultZone: http://47.56.250.140:8761/eureka/
   instance:
     prefer-ip-address: true
+    
 
 logging:
   pattern:
